@@ -30,17 +30,17 @@ public class Feeder {
         sendmsg = "false";
         int days = 0;
         while (numDays > 0) {
+            if (currentFood == 0) {
+                sendmsg = "true";
+                System.out.print((numBirds * days) + " birds came to find and eat from the feeder over the course of ");
+                return days;
+            }
             simulateOneDay(numBirds);
             numDays--;
             days++;
-            if (currentFood == 0) {
-                sendmsg = "true";
-                System.out.print((numBirds * days) + " birds came and ate over the course of ");
-                return days;
             }
-        }
         sendmsg = "true";
-        System.out.print((numBirds * days) + " birds came and ate over the course of ");
+        System.out.print((numBirds * days) + " birds came to find and eat from the feeder over the course of ");
         return days;
     }
 }
